@@ -17,6 +17,15 @@ export function App() {
           </button>
         </form>
 
+        <div className={styles.taskInfo}>
+          <div className={styles.taskInfoCreated}>
+            Tarefas criadas <span className={styles.numberTasks}>5</span>
+          </div>
+          <div className={styles.taskInfoCompleted}>
+            Concluídas <span className={styles.numberTasks}>2 de 5</span>
+          </div>
+        </div>
+
         <TaskCard/>
         <TaskCard/>
         <TaskCard/>
