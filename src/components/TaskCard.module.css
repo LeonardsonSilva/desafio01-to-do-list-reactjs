@@ -1,0 +1,58 @@
+/*quero estilizar todo post que antes tenha um post também (é o código abaixo)*/
+.content + .content{
+  margin-top: 0.75rem; /*12px*/
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--gray-400);
+  min-height: 4.5rem; /*altura mínima de 72px*/
+  gap: 8px;
+}
+
+.content p{
+  font-size: 0.875rem; /*14px*/
+  color: var(--gray-100);
+  line-height: 1.25rem; /*20px*/
+  margin-right: auto;
+}
+
+.checkContainer{
+  min-width: 1.125rem;
+  height: 1.125rem;
+  background-color: none;
+  border: none;
+  background: none;
+  border: none;
+}
+
+.checkContainer div{
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  transition: border-color 0.1s;
+}
+
+.checkContainer div:hover{
+  border-color: var(--blue-dark);
+  cursor: pointer;
+}
+
+
+.content .deleteButton{
+  background: none;
+  border: none;
+  color: var(--gray-300);
+  transition: color 0.1s;
+}
+
+.content .deleteButton:hover{
+  color: var(--danger);
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ import './global.css'
 import {Header} from './components/Header'
 import styles from './App.module.css'
 import {PlusCircle} from 'phosphor-react'
+import { TaskCard } from './components/TaskCard'
 export function App() {
 
   return (
@@ -15,8 +16,11 @@ export function App() {
             Criar <PlusCircle size={16}/>
           </button>
         </form>
-      </div>
 
+        <TaskCard/>
+        <TaskCard/>
+        <TaskCard/>
+      </div>
     </>
   )
 }
