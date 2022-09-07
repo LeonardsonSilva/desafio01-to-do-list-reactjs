@@ -24,6 +24,7 @@ export function App() {
         id: uuidv4(),
         description: newTaskText,
         isCompleted: false,
+        onDeleteTask: deleteTask
       }
     ])
 
@@ -32,6 +33,13 @@ export function App() {
 
   function handleNewTaskInputChange(event: ChangeEvent<HTMLInputElement>){
     setNewTaskText(event.target.value)
+  }
+
+  function deleteTask(taskId: string){
+    const tasksWithoutDeleteOne = tasks.filter(task =>{
+      return task.id !== taskId
+    })
+    setTasks(tasksWithoutDeleteOne)
   }
 
   return (
@@ -70,6 +78,7 @@ export function App() {
                 id={task.id}
                 description={task.description}
                 isCompleted={task.isCompleted}
+                onDeleteTask={deleteTask} /* passado a função deleteTask*/
               />
             )
           })}
