@@ -6,16 +6,22 @@ export interface TaskProps{
   description: string;
   isCompleted: boolean;
   onDeleteTask: (taskId: string) => void;
+  onCheckTask: (taskId: string) => void;
 }
 
-export function TaskCard({id, description, onDeleteTask}: TaskProps){
+export function TaskCard({id, description, onDeleteTask, onCheckTask, isCompleted}: TaskProps){
+
   function handleDeleteTask(){
     onDeleteTask(id)
   }
 
+  function handleCheckTask(){
+    onCheckTask(id);
+  }
+
   return(
     <div className={styles.content}>
-        <button className={styles.checkContainer}>
+        <button onClick={handleCheckTask} className={styles.checkContainer}>
           <div/>
         </button>
         <p>

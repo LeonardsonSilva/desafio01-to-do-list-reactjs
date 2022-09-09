@@ -42,6 +42,15 @@ export function App() {
     setTasks(tasksWithoutDeleteOne)
   }
 
+  function checkTask(taskId: string){
+    tasks.forEach(task => {
+      if (task.id === taskId){
+        setTasks([...tasks, task])
+      }
+    })
+    console.log(tasks)
+  }
+
   return (
     <>
       <Header/>
@@ -79,6 +88,7 @@ export function App() {
                 description={task.description}
                 isCompleted={task.isCompleted}
                 onDeleteTask={deleteTask} /* passado a função deleteTask*/
+                onCheckTask={checkTask}
               />
             )
           })}
