@@ -1,4 +1,4 @@
-import styles from './TaskCard.module.css'
+import styles from './styles.module.css'
 import {Trash} from 'phosphor-react'
 
 export interface TaskProps{
