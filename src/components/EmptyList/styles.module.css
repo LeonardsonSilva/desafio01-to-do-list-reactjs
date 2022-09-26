@@ -9,6 +9,7 @@
   width: 3.5rem; /*56px*/
   height: 3.5rem;
   margin-top: 4rem;
+  color: var(--gray-400);
 }
 
 .container p{

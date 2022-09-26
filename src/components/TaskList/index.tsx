@@ -65,7 +65,10 @@ export function TaskList(){
             required
           />
           <button type='submit'>
-            Criar <PlusCircle size={16}/>
+            <span>
+              <span>Criar</span>
+              <PlusCircle />
+            </span>
           </button>
         </form>
 
