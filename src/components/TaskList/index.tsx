@@ -20,7 +20,8 @@ export function TaskList(){
         id: uuidv4(),
         description: newTaskText,
         isCompleted: false,
-        onDeleteTask: deleteTask
+        onDeleteTask: deleteTask,
+        onToggleCheckTask: toggleTaskCompleted,
       }
     ])
 
@@ -36,6 +37,18 @@ export function TaskList(){
       return task.id !== taskId
     })
     setTasks(tasksWithoutDeleteOne)
+  }
+  function toggleTaskCompleted(taskId: string){
+    const newTasks = tasks.map(task => {
+      if(task.id === taskId){
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        };
+      }
+      return task
+    })
+    setTasks(newTasks)
   }
   return(
     <>
@@ -73,6 +86,7 @@ export function TaskList(){
                 description={task.description}
                 isCompleted={task.isCompleted}
                 onDeleteTask={deleteTask} /* passado a função deleteTask*/
+                onToggleCheckTask={toggleTaskCompleted}
               />
             )
           })}
