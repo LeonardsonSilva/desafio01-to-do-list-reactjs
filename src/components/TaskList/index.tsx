@@ -1,8 +1,9 @@
 import styles from './styles.module.css'
-import {PlusCircle} from 'phosphor-react'
+import { PlusCircle } from 'phosphor-react'
 import { TaskCard, TaskProps } from '../TaskCard'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import {v4 as uuidv4} from 'uuid' //npm i --save-dev @types/uuid
+import { EmptyList } from '../EmptyList'
 
 export function TaskList(){
   const [tasks, setTasks] = useState<TaskProps[]>([]);  //<any[]>([]) por causa da info: type string is not assignable to type never
@@ -91,6 +92,8 @@ export function TaskList(){
             )
           })}
         </div>
+
+        {tasks.length === 0 ? <EmptyList />  : ""}
 
       </div>
     </>
